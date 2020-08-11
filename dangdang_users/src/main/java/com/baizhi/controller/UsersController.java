@@ -5,6 +5,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -25,6 +26,7 @@ public class UsersController {
     @GetMapping("user/showOne")
     public Map<String,Object> showOne(){
         User user = new User();
+        user.setId("1").setUsername("zhx").setBir(new Date());
         Map<String, Object> map = new HashMap<>();
         map.put("status", true);
         map.put("date", user);
